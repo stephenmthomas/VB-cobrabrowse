@@ -15,14 +15,14 @@ Public Class cmdGenPrev
         txtURL.Text = ""
     End Sub
     Private Sub TrimSource()
-        Dim sSource As String = txtSource.Text 'String that is being searched
-        Dim sDelimStart As String = "<blockquote class=""postcontent restore "">" 'First delimiting word
-        Dim sDelimEnd As String = "</blockquote>" 'Second delimiting word
-        Dim nIndexStart As Integer = sSource.IndexOf(sDelimStart) 'Find the first occurrence of f1
-        Dim nIndexEnd As Integer = sSource.IndexOf(sDelimEnd) 'Find the first occurrence of f2
+        Dim strSource As String = txtSource.Text 'String that is being searched
+        Dim strDelStart As String = "<blockquote class=""postcontent restore "">" 'First delimiting word
+        Dim strDelEnd As String = "</blockquote>" 'Second delimiting word
+        Dim nIndexStart As Integer = strSource.IndexOf(strDelStart) 'Find the first occurrence of f1
+        Dim nIndexEnd As Integer = strSource.IndexOf(strDelEnd) 'Find the first occurrence of f2
 
         If nIndexStart > -1 AndAlso nIndexEnd > -1 Then '-1 means the word was not found.
-            Dim res As String = Strings.Mid(sSource, nIndexStart + sDelimStart.Length + 1, nIndexEnd - nIndexStart - sDelimStart.Length) 'Crop the text between
+            Dim res As String = Strings.Mid(strSource, nIndexStart + strDelStart.Length + 1, nIndexEnd - nIndexStart - strDelStart.Length) 'Crop the text between
             txtSource.Text = res
         Else
             MessageBox.Show("One or both of the delimiting words were not found!")
