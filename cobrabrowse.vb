@@ -123,7 +123,7 @@ Public Class cmdGenPrev
         GenREPSR("/small/", "/big/")
         GenREPSR("/th/", "/i/")
         GenREPSR("_t", "")
-        GenREPSR("://t", "://i") 'ImgChili
+        GenREPSR("://t", "://i") 
         MakeIMGPage()
         OpenIMGPage()
     End Sub
